@@ -81,25 +81,27 @@
 		</div>
 	</div>
 
-	<?php 
-
-		include 'database/db_connection.php';
-
-		$conn = OpenCon();
-			
-		echo
-			"<script>
-				function dbConnectionCheck() {
-					document.getElementById('dbConnectionIndicator').innerHTML = 'Aan';
-				}
-				
-				dbConnectionCheck();
-			</script>"
-		;
-		
-		CloseCon($conn);
-
-	?>
+<!--
+//	<?php 
+//
+//		include 'database/db_connection.php';
+//
+//		$conn = OpenCon();
+//			
+//		echo
+//			"<script>
+//				function dbConnectionCheck() {
+//					document.getElementById('dbConnectionIndicator').innerHTML = 'Aan';
+//				}
+//				
+//				dbConnectionCheck();
+//			</script>"
+//		;
+//		
+//		CloseCon($conn);
+//
+//	?>
+-->
 
 </body>
 </html>
