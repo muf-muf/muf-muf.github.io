@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" type="text/css" href="game.css">
+	<link rel="stylesheet" type="text/css" href="menu.css">
+	<link rel="stylesheet" type="text/css" href="debug.css">
+	<script src="debug.js"></script>
+	<script src="config.js"></script>
+	<script src="feature_tent1.js"></script>
+	<script src="feature_tent2.js"></script>
+	<script src="feature_tent3.js"></script>
+	<script src="feature_force_reload.js"></script>
+	<script src="feature_game_timelimit.js"></script>
+	<script src="feature_game_completed.js"></script>
+	<script src="game.js"></script>
+	<script src="startup.js"></script>
+	<title>Kampeerbeheer</title>
+</head>
+<body onload="startup()">
+
+	<div class="topnav">
+	    <a href="index.html">Start</a>
+	    <a class="active" href="game.php">Kampeerbeheer</a>
+	    <a href="quickgame.html">Ander spelletje</a>
+	</div>
+
+	<div id="topHUD">
+		<img src="images/titel.png">
+		<input type="number" id="collectedMoney" value="0" disabled="true">
+		<button id="collect" onclick="collectAllMoney()">collectAllMoney</button>
+		<span id="moneyCounter"><p>Verdien geld met tenten verhuren.</p></span>
+	</div>
+
+	<div class="tent" id="tent1">
+		<h4>Trekkerstentje (level <span id="currentLevelTent1">1</span>)</h4>
+		<input type="number" id="currentMoneyTent1" value="0" disabled="true">
+		<br>
+		<button class="upgrade" id="buttonUpgradeTent1" onclick="upgradeTent1()">Upgrade tent ($<span id="currentTentUpgradeCostTent1">500</span>)</button>
+	</div>
+	
+	<div class="tent" id="tent2">
+		<h4>Degelijke tent (level <span id="currentLevelTent2">0</span>)</h4>
+		<input type="number" id="currentMoneyTent2" value="0" disabled="true">
+		<br>
+		<button id="buttonBuyTent2" onclick="unlockTent2()">Koop tent ($5000)</button>
+		<br>
+		<button class="upgrade" id="buttonUpgradeTent2" onclick="upgradeTent2()" disabled="true">Upgrade tent ($<span id="currentTentUpgradeCostTent2">2500</span>)</button>
+	</div>
+
+	<div class="tent" id="tent3">
+		<h4>Coole scoutingtent (level <span id="currentLevelTent3">0</span>)</h4>
+		<input type="number" id="currentMoneyTent3" value="0" disabled="true">
+		<br>
+		<button id="buttonBuyTent3" onclick="unlockTent3()">Koop tent ($15000)</button>
+		<br>
+		<button class="upgrade" id="buttonUpgradeTent3" onclick="upgradeTent3()" disabled="true">Upgrade tent ($<span id="currentTentUpgradeCostTent3">5000</span>)</button>
+	</div>
+
+	<div class="timerPanel">
+		<span id="timeLeftInCountdown" class="timer">GO!</span>
+	</div>
+
+	<div id="testDiv">
+		<p id="titel">Hackermanpaneel</p>
+		
+		<span id="testButtonSpan"></span>
+		<span id="testSpan"></span>
+
+		<div id="huidigeIntervallen">
+			<p>
+				Huidige interval Tent 1: <span id="currentMoneyIntervalTent1">10</span>
+				<br>
+				Huidige interval Tent 2: <span id="currentMoneyIntervalTent2">50</span>
+				<br>
+				Huidige interval Tent 3: <span id="currentMoneyIntervalTent3">300</span>
+			</p>
+			<p>
+				DB connectie: <span id="dbConnectionIndicator">Uit</span>
+			</p>
+		</div>
+	</div>
+
+	<?php 
+
+		include 'database/db_connection.php';
+
+		$conn = OpenCon();
+			
+		echo
+			"<script>
+				function dbConnectionCheck() {
+					document.getElementById('dbConnectionIndicator').innerHTML = 'Aan';
+				}
+				
+				dbConnectionCheck();
+			</script>"
+		;
+		
+		CloseCon($conn);
+
+	?>
+
+</body>
+</html>

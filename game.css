@@ -1,0 +1,124 @@
+body {
+	background: url("images/background.png") no-repeat;
+	background-color: #2e3136;
+	color: black;
+	font-family: "Calibri", sans-serif;
+}
+
+.error,
+input#currentMoneyTent1.error,			/* Needs to be defined explicitly because later "div.tent input" is more precise and overrides this */
+input#currentMoneyTent2.error,
+input#currentMoneyTent3.error {
+	color: red;
+	font-weight: bold;
+}
+
+button {
+	background: url("images/button1.png") no-repeat;
+	color: #e9f0ef;
+	font-weight: bold;
+	height: 40px;
+	width: 180px;
+	border: none;
+}
+
+button:focus,
+input:focus {
+	outline: none;
+}
+
+button:disabled {
+	background: url("images/button1_inactive.png") no-repeat;
+}
+
+input:-webkit-outer-spin-button,		/* Doesn't seem to work (yet); should remove the arrows in the inputs on hover */
+input:-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Heeft betrekking op alle tenten */
+div.tent {
+	height: 175px;
+	width: 263px;
+}
+
+div.tent input {
+	background: none;
+	border: none;
+	font-size: 18px;
+	font-weight: bold;
+	color: #18508c;
+
+	position: absolute;
+	left: 65px;
+	top: 140px;
+	width: 150px;
+	text-align: center;
+}
+
+div.tent button {
+	position: absolute;
+	left: 50px;
+	top: 155px;
+}
+
+button#buttonUpgradeTent2,
+button#buttonUpgradeTent3 {
+	visibility: hidden;
+}
+
+div.tent h4 {
+	color: navy;
+	text-align: center;
+	margin-top: -20px; 
+}
+
+/* Alles voor tent 1 */
+div#tent1 {
+	position: absolute;
+	background: url("images/tent1.png") no-repeat;
+	left: -10px;
+	top: 340px;
+}
+
+div#tent1 button {
+	top: 155px;
+}
+
+/* Alles voor tent 2 */
+div#tent2 {
+	position: absolute;
+	background: url("images/tent2_lvl0.png") no-repeat;
+	left: 233px;
+	top: 268px;
+}
+
+/* Alles voor tent 3 */
+div#tent3 {
+	position: absolute;
+	background: url("images/tent3_lvl0.png") no-repeat;
+	left: 507px;
+	top: 305px;
+}
+
+.timer {
+	font-weight: bold;
+	color: #18508c;
+}
+
+.timerShort {
+	font-weight: bold;
+	color: red;
+}
+
+.timerPanel {
+	position: absolute;
+	left: 732px;
+	top: 45px;
+	width: 40px;
+	background-color: #f5aed3;
+	padding: 7px;
+	text-align: center;
+	border-radius: 10px;
+}

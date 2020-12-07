@@ -1,0 +1,19 @@
+div#testDiv {
+	position: absolute;
+	left: 820px;
+	top: 20px;
+	padding: 10px;
+	background: #ca81de;
+	border-radius: 15px;
+	height: 250px;
+	width: 200px;
+}
+
+div#testDiv p#titel {
+	text-align: center;
+	font-weight: bold;
+}
+
+button#testButton {
+	margin-left: 10px;
+}
